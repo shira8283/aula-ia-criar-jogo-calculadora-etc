@@ -1,4 +1,6 @@
 Calculadora 
+
+
 print("=== CALCULADORA ===")
 
 num1 = float(input("Digite o primeiro número: "))
@@ -14,14 +16,17 @@ elif operacao == "*":
 elif operacao == "/":
     if num2 != 0:
         resultado = num1 / num2
-    else:
+else:
         resultado = "Erro: divisão por zero"
 else:
     resultado = "Operação inválida"
 
 print("Resultado:", resultado)
 
+
 Jogo da forca
+
+
 import random
 
 palavras = ["python", "programacao", "computador", "faculdade"]
@@ -40,7 +45,7 @@ while tentativas > 0 and "_" in letras_descobertas:
         for i in range(len(palavra)):
             if palavra[i] == letra:
                 letras_descobertas[i] = letra
-    else:
+else:
         tentativas -= 1
         print("Errou! Tentativas restantes:", tentativas)
 
@@ -50,8 +55,12 @@ else:
     print("\nVocê perdeu! Palavra era:", palavra)
 
     import requests
+
     
 API de Consulta de CEP
+
+
+
 print("=== CONSULTA DE CEP ===")
 
 cep = input("Digite o CEP (somente números): ")
