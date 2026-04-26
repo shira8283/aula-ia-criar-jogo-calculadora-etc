@@ -1,0 +1,19 @@
+API de Consulta de CEP
+
+print("=== CONSULTA DE CEP ===")
+
+cep = input("Digite o CEP (somente números): ")
+
+url = f"https://viacep.com.br/ws/{cep}/json/"
+
+resposta = requests.get(url)
+dados = resposta.json()
+
+if "erro" in dados:
+    print("CEP inválido!")
+else:
+    print("\nEndereço encontrado:")
+    print("Rua:", dados["logradouro"])
+    print("Bairro:", dados["bairro"])
+    print("Cidade:", dados["localidade"])
+    print("Estado:", dados["uf"])
