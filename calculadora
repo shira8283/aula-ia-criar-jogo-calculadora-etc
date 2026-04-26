@@ -22,36 +22,3 @@ else:
     resultado = "Operação inválida"
 
 print("Resultado:", resultado)
-
-
-Jogo da forca
-
-
-import random
-
-palavras = ["python", "programacao", "computador", "faculdade"]
-palavra = random.choice(palavras)
-
-letras_descobertas = ["_"] * len(palavra)
-tentativas = 6
-
-print("=== JOGO DA FORCA ===")
-
-while tentativas > 0 and "_" in letras_descobertas:
-    print("\nPalavra:", " ".join(letras_descobertas))
-    letra = input("Digite uma letra: ").lower()
-
-    if letra in palavra:
-        for i in range(len(palavra)):
-            if palavra[i] == letra:
-                letras_descobertas[i] = letra
-else:
-        tentativas -= 1
-        print("Errou! Tentativas restantes:", tentativas)
-
-if "_" not in letras_descobertas:
-    print("\nVocê ganhou! Palavra:", palavra)
-else:
-    print("\nVocê perdeu! Palavra era:", palavra)
-
-    import requests
