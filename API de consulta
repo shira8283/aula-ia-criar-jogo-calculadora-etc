@@ -1,5 +1,6 @@
 API de Consulta de CEP
 
+
 import requests
 
 print("=== CONSULTA DE CEP ===")
