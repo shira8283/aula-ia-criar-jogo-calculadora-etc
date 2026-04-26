@@ -1,32 +1,27 @@
-Jogo da forca
-
+Jogo da forma
 
 import random
 
-palavras = ["python", "programacao", "computador", "faculdade"]
-palavra = random.choice(palavras)
+formas = {
+    "Triângulo": "3 lados",
+    "Quadrado": "4 lados iguais",
+    "Retângulo": "4 lados (pares iguais)",
+    "Círculo": "sem lados"
+}
 
-letras_descobertas = ["_"] * len(palavra)
-tentativas = 6
+pontuacao = 0
 
-print("=== JOGO DA FORCA ===")
-
-while tentativas > 0 and "_" in letras_descobertas:
-    print("\nPalavra:", " ".join(letras_descobertas))
-    letra = input("Digite uma letra: ").lower()
-
-    if letra in palavra:
-        for i in range(len(palavra)):
-            if palavra[i] == letra:
-                letras_descobertas[i] = letra
-else:
-        tentativas -= 1
-        print("Errou! Tentativas restantes:", tentativas)
-
-if "_" not in letras_descobertas:
-    print("\nVocê ganhou! Palavra:", palavra)
-else:
-    print("\nVocê perdeu! Palavra era:", palavra)
+for rodada in range(5):
+    forma, dica = random.choice(list(formas.items()))
     
+    print("\nDica:", dica)
+    
+    resposta = input("Qual é a forma? ").strip().capitalize()
+    
+    if resposta == forma:
+        print("✅ Acertou!")
+        pontuacao += 1
+    else:
+        print(f"❌ Errou! Era {forma}")
 
-import requests
+print("\nPontuação final:", pontuacao)
